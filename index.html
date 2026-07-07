@@ -120,6 +120,7 @@
   .stage{position:relative;z-index:2;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:2.4rem 1.8rem;}
 
   .card{
+    position:relative;
     width:100%;max-width:52rem;background:var(--card);
     border:.15rem solid var(--card-line);
     border-radius:2.4rem;padding:3.2rem 2.8rem;
@@ -152,7 +153,15 @@
   .btn:focus-visible{outline:.3rem solid var(--ink);outline-offset:.3rem;}
   .btn.ghost{background:rgba(255,255,255,.85);color:var(--ink);box-shadow:0 .5rem 1.4rem rgba(8,58,82,.16);}
   .btn.ghost:hover{filter:none;}
-  .btn.sea{background:linear-gradient(180deg,var(--sea-mid) 0%,var(--sea-deep) 100%);box-shadow:0 .6rem 1.6rem rgba(10,138,173,.4);}
+  .btn.teal{background:linear-gradient(180deg,var(--sea-mid) 0%,var(--sea-deep) 100%);box-shadow:0 .6rem 1.6rem rgba(10,138,173,.4);}
+  .end-top{display:flex;justify-content:flex-end;margin-bottom:.6rem;}
+  .btn.corner{
+    flex:0 0 auto;width:auto;margin-top:0;
+    white-space:nowrap;
+    font-size:1.3rem;padding:.7rem 1.1rem;border-radius:1rem;
+    box-shadow:0 .3rem .9rem rgba(10,138,173,.35);
+  }
+  .btn.corner:hover{transform:translateY(-.1rem);}
   .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;filter:grayscale(.3);}
 
   .btn-row{margin-top:2.4rem;}
@@ -296,6 +305,9 @@
 
       <!-- END -->
       <section id="end" class="screen">
+        <div class="end-top">
+          <button class="btn teal corner" onclick="showScreen('scores'); renderScores();">🏆 Leaderboard</button>
+        </div>
         <h2 class="title">Conch out! 🐚</h2>
         <div class="final-score">
           <div class="big" id="finalScore">0</div>
@@ -304,7 +316,6 @@
         <input class="field" id="username" type="text" maxlength="16" placeholder="Enter your name" autocomplete="off" />
         <button class="btn" id="saveBtn" onclick="saveScore()" disabled>Save score</button>
         <div class="saved-tag" id="savedTag">Saved to the leaderboard! 🌴</div>
-        <button class="btn sea" onclick="showScreen('scores'); renderScores();">🏆 View leaderboard</button>
         <div class="btn-row">
           <button class="btn ghost" onclick="startGame()">Play again</button>
           <button class="btn ghost" onclick="showScreen('home')">Home</button>
