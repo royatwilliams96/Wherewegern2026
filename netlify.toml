@@ -1,0 +1,4 @@
+[build]
+  # Static site — no build step. Serve files from the repo root.
+  publish = "."
+  functions = "netlify/functions"

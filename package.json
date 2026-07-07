@@ -1,0 +1,10 @@
+{
+  "name": "where-we-gern",
+  "version": "1.0.0",
+  "description": "Where We Gern? — a Bahamas island quiz with a global leaderboard.",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@netlify/blobs": "^10.7.9"
+  }
+}
